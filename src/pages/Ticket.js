@@ -29,7 +29,7 @@ export default function Tiket() {
 
 
 
-    if (toke.length == 5) {
+    if (toke.length == 30) {
 
 
         return `
@@ -57,7 +57,7 @@ export default function Tiket() {
 
   <br>
   <br>
-      <h4 style="color: #fff"> Pedeu a oportunidade!!!</h4>
+      <h4  style="color: #fff; font-size: 12px;"> Pedeu a oportunidade!!!</h4>
   <br>
  
   <br>
@@ -70,13 +70,12 @@ export default function Tiket() {
 
 
         return `
-        <img class="imgLogo" src="./src/img/logo.png" height="400px">
+        <img class="imgLogo2" src="./src/img/logo.png" height="400px">
   <div class="containerTicket">
       <div class="conteinerImgmiasInformacoes">
-      <div class="conteinerImg">
-          <div></div>
-          <img class="conteinerImgFormat" src="${dadosUrl.imagemUrl}" height="100">
-          
+      <div class="colar"></div>
+      <div class="conteinerImg">         
+          <img class="conteinerImgFormat" src="${dadosUrl.imagemUrl}" height="100">          
           </div>
 
           <div class="conteinerInformacoes">
@@ -92,13 +91,13 @@ export default function Tiket() {
 
   <br>
   <br>
-      <h4 style="color: #fff"> Preencha as informações abaixo</h4>
-      <h4 style="color: #fff"> antes que perca a oportunidade [${toke.length}] de [4]</h4>
+      <h4 style="color: #fff; font-size: 12px;"> Preencha as informações abaixo</h4>
+      <h4 style="color: #fff; font-size: 12px;"> antes que perca a oportunidade [${toke.length}] de [4]</h4>
   <br>
  
   <br>
   
-  <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSfqnnYk7tWl0Fq-qjcWGfxje3nDltsyboR2IlldtB2ZLN_Xhw/viewform?embedded=true" width="500" height="300" frameborder="0" marginheight="0" marginwidth="0"  >Carregando…</iframe>
+  <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSfqnnYk7tWl0Fq-qjcWGfxje3nDltsyboR2IlldtB2ZLN_Xhw/viewform?embedded=true" width="500" height="300" frameborder="0" marginheight="0" marginwidth="0"scrolling="no" >Carregando…</iframe>
 
 
 

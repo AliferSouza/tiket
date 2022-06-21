@@ -28,19 +28,17 @@ export default function cadastraPrincipal() {
 
      window.salvarLoja = (dados) => {
         const Nome = document.querySelector(".Name").value
-        const imagemUrl = document.querySelector(".imagem").value
-        const whatsapp = document.querySelector(".whatsapp").value
+        const imagemUrl = document.querySelector(".imagem").value       
         const valorTicket =  geraStringAleatoria(8)
       
 
 
-        if (!Nome || !imagemUrl || !whatsapp || !valorTicket) {
+        if (!Nome || !imagemUrl || !valorTicket) {
             alert("Valores obrigatorios para todos os campos")
         } else {          
             const miniSite = {
                             Nome,
-                            imagemUrl,
-                            whatsapp,
+                            imagemUrl,                         
                             valorTicket
                          }
 
@@ -66,14 +64,13 @@ export default function cadastraPrincipal() {
         <div class="input-field">
             <input type="text" class="imagem" placeholder="URL de uma imagem" required>                          
         </div>   
-
-        <div class="input-field">
-            <input type="" class="whatsapp" placeholder="Whatsapp" required>      
-        </div>                
-
         <div class="input-field button">
             <input type="button" value="Salvar" onclick="salvarLoja()">
         </div>
+        <br>
+        <br>
+        <br>
+        <br>
     </form>    
 
 </div>
