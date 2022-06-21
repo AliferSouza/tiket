@@ -13,6 +13,10 @@ export default function Tiket() {
         toke.push(props)
         localStorage.setItem("toke", JSON.stringify(toke))
 
+    } else if (toke.length === 2) {
+        toke.push(props)
+        localStorage.setItem("toke", JSON.stringify(toke))
+
     }
 
     const verificarValor = localStorage.hasOwnProperty("indetificacaoTicket")
@@ -36,7 +40,7 @@ export default function Tiket() {
                  </div> 
                  </div>
                 <br><br>
-               ${toke.length == 2 ? `<h4 style="color:#fff">Acabou as tentativas!</h4>` : `<h3 >Responda o formulario abaixo></h3>
+               ${toke.length == 3 ? `<h4 style="color:#fff">Acabou as tentativas!</h4>` : `<h3 >Responda o formulario abaixo></h3>
                <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSdwSdocVw4zAEvYDeaLRhBmZwGPdRdz3mU59365NeTJLF5l1A/viewform?embedded=true"
                width="500" height="300" frameborder="0" marginheight="0" marginwidth="0" scrolling="no" >Carregando…</iframe>`} 
                <br> `
