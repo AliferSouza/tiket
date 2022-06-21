@@ -2,7 +2,8 @@ import urlParamentro from '../lib/objectToQueryString.js'
 var urlNavegador = location.href
 
 export default function cadastraPrincipal() {
-  
+    const estadoSeletFoto = [] || []
+
 
     function geraStringAleatoria(tamanho) {
         var stringAleatoria = '';
@@ -13,34 +14,51 @@ export default function cadastraPrincipal() {
         return stringAleatoria;
     }  
 
+    window.pegarFoto = () => {
+     const pegar =   window.document.querySelector(".escolhaFoto")     
+        
+       pegar.addEventListener("click", e =>{  
+                 
+            if(e.target.tagName === "IMG"){       
+             estadoSeletFoto.push(e.target.src)  
+            }    
+            
+          
+        })
+       
+
+    }
+
+
+  
+
     window.onload = function aramentroUrl(){
         const resultadoDoBanco = JSON.parse(localStorage.getItem('indetificacaoTicket') || "[]")
        
         const dados = urlParamentro(resultadoDoBanco)
-
         if (localStorage.hasOwnProperty("indetificacaoTicket")){
             window.location.href = `${urlNavegador}?${dados}`  
         }
   
+       pegarFoto()
        
 
     }
 
      window.salvarLoja = (dados) => {
         const Nome = document.querySelector(".Name").value
-        const imagemUrl = document.querySelector(".imagem").value
-        const whatsapp = document.querySelector(".whatsapp").value
+        const Sobrenome = document.querySelector(".Sobrenome").value           
         const valorTicket =  geraStringAleatoria(8)
       
 
 
-        if (!Nome || !imagemUrl || !whatsapp || !valorTicket) {
+        if (!Nome || !Sobrenome || !valorTicket) {
             alert("Valores obrigatorios para todos os campos")
         } else {          
             const miniSite = {
                             Nome,
-                            imagemUrl,
-                            whatsapp,
+                            Sobrenome, 
+                            Foto: estadoSeletFoto.join(),                        
                             valorTicket
                          }
 
@@ -60,20 +78,46 @@ export default function cadastraPrincipal() {
 
     <form action="#">
         <div class="input-field">
-            <input type="text" class="Name" placeholder="Digite seu nome" required>
+            <input type="text" class="Name" placeholder="Nome" required>
         </div>
 
         <div class="input-field">
-            <input type="text" class="imagem" placeholder="URL de uma imagem" required>                          
+            <input type="text" class="Sobrenome" placeholder="Sobrenome" required>                          
         </div>   
 
         <div class="input-field">
-            <input type="" class="whatsapp" placeholder="Whatsapp" required>      
-        </div>                
+
+        <fieldset class="radio-image escolhaFoto">
+                <label for="M">
+                    <input type="radio"  name="sexo" id="M" value="M">
+                    <img src="./src/img/avatar01.png" class="escolha" alt="" height="45px">
+                </label>
+                <label for="F">
+                    <input type="radio"  name="sexo" id="F" value="F">
+                    <img src="./src/img/avatar02.png" class="escolha" alt=""  height="45px">
+                </label>
+
+                <label for="A">
+                    <input type="radio"  name="sexo" id="A" value="A">
+                    <img src="./src/img/avatar03.png" class="escolha" height="45px">
+                </label>
+                <label for="B">
+                    <input type="radio"  name="sexo" id="B" value="B">
+                    <img src="./src/img/avatar04.png" class="escolha" height="45px"> 
+                </label>
+        </fieldset>
+                            
+        </div>  
+
 
         <div class="input-field button">
             <input type="button" value="Salvar" onclick="salvarLoja()">
         </div>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
     </form>    
 
 </div>
