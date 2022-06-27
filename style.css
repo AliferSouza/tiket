@@ -9,47 +9,23 @@
     font-family: 'Poppins', sans-serif;
 }
 
-#root{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-
-}
 
 body{
-    height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background: linear-gradient(-45deg, #000000, #535151, #865175) 
-}
-
-.container{
-    position: relative;
-    background:  #865175;
-    border-radius: 10px;
-    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
-    overflow: hidden;
-}
-
-.forms{
-    display: flex;
-    align-items: center;
     width: 100%;
-    border-radius: 10px;
-    box-shadow: 0.5px 10px #fff;
-    transition: height 0.2s ease;
-   }
-
-
-.form{
-    padding: 9rem 1rem 1rem 1rem;
-    background-color: rgb(247, 247, 247);
-    transition: margin-left 0.18s ease;
+    background: #8a637d
 }
 
+#root{
+    display: flex;
+    align-items: center;  
+    flex-direction: column;
+}
 
+.form{       
+    background: linear-gradient(-45deg, #bebebe, #ffffff);
+    padding: 30px; 
+    border-radius: 10px;
+}
 
 .title{  
     position: relative;
@@ -94,41 +70,69 @@ input:is(:focus, :valid){
 }
 
 
-.button input{
-
+.button {
+    text-align: center;
     border: none;
     color: #fff;
     font-size: 17px;
-    font-weight: 500;
-    letter-spacing: 1px;
+    font-weight: 500;    
     border-radius: 6px;
     background-color: #865175;
     cursor: pointer;
     transition: all 0.3s ease;
+    padding-bottom: 3px;
+}
+
+.button2{  
+    text-align: center;
+    border: none;
+    color: #fff;
+    font-size: 17px;
+    font-weight: 500;    
+    border-radius: 6px;
+    background-color: #865175;
+    cursor: pointer;
+    transition: all 0.3s ease;   
+    padding-top: 0.3rem;
+  
 }
 
 .button input:hover{
     background-color: #85637a;
 }
 
-
-
-
 .containerTicket{
+    position: relative; 
     border-radius: 10%;
-    padding: 40px;
+    padding: 50px 20px 20px 20px;
     background: #000000; 
+    font-size: 60%;
+    color: #fff;
+    border-radius: 1rem 1rem 0rem 0rem;
+}
+
+.containerTicket01{   
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column; 
+    background: linear-gradient(-45deg, #bebebe, #ffffff);
+    border-radius: 1rem 1rem 1rem 1rem;
+ 
+   
 }
 
 .conteinerImgmiasInformacoes{
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 20px;
+    gap: 15px;
   
 }
 
 .conteinerImgFormat{
+    width: 80px;
+    height: 80px;
     border-radius: 50%;
     border: 4px solid #865175
 
@@ -137,39 +141,25 @@ input:is(:focus, :valid){
 .conteinerInformacoesNumero{
     position: relative;
     top: 15px;
-    left: 72px;
+    left: 40px;
 }
 
-
-.conteinerInformacoesColor{
-   color: #fff;
-}
-
-.imgLogo{
-    position: relative;
-    height: 300px; 
-   
-}
-
-.imgLogo2{    
-    position: absolute;
-    width: 150;
+.imgLogo2{     
+    width: 200px;
     height: 200px;
-    top: 5%
+  
 }
-.colar{
+
+.colar{  
+    position: absolute;
     background-color: #fff;
-    padding: 10px;
+    padding: 10px 10px 10px 10px;
     border-radius: 100%;
+    left: 48%;
+    top: 10%
 }
 
-iframe{
-   position: absolute;
-   height:100%;
-   width: 90%;
-   top: 70%
 
-}
 
 .escolhaFoto{
     display: flex;
@@ -192,7 +182,7 @@ fieldset {
 
 .radio-image label > input + img{
     cursor:pointer;
-    border:4px solid #EEE;
+    border:2px solid #EEE;
     border-radius:15px;
     padding:10px;
 }
@@ -202,61 +192,17 @@ fieldset {
 
 
 
-@media screen and (max-width: 650px) {
-    .imgLogo{
-     position: relative;
-     height: 50px; 
-    
-    }
 
-    .container{
+@media only screen and (max-width: 400px) {
+      
+    .form{       
+        background: linear-gradient(-45deg, #bebebe, #ffffff);
+        padding: 10px; 
+        border-radius: 10px;
+    }
+    input{
         position: relative;      
-        width: 80%;      
-    }
-    
-    .forms{     
-        height: 500px;
-        width: 100%;
-    }
-    .imgLogo2{    
-        position: absolute;
-        width: 150;
-        height: 150px;
-        top: 1%
-    }
-
-    .containerTicket{
-        border-radius: 5%;
-        padding: 10px 28px 15px 10px; 
-        font-size: 10px;   
-        background: #000000;
-    }
-    .conteinerImgFormat{
-        border-radius: 50%;
-        border: 2px solid;
-        width: 80px;
-        height: 80px;
-        
-
-    }
-
-    
-    iframe{
-    position: absolute;
-    height:100%;
-    width: 90%;
-    top: 60%
- 
-    }
-
-    body{   
-        display: flex;
-        align-items: center;
-        justify-content: center;
+        padding: 0 10px;
       
     }
- 
-
-
-
-}
+  }
